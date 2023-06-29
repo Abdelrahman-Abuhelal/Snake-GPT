@@ -1,31 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>I am Extracter! You should afraid</h1>
-        <label>Do you agree to take contents of this page?</label>
-        <button>Agree</button>
-
-        <script>
-
-            const dataToSend = {
-            // Your data to be sent to the API
-            };
-
-            fetch('http://localhost:8000/api/endpoint/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(dataToSend),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Process the response from the API
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-
-        </script>
-    </body>
+<head>
+  <title>Popup</title>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <div id="content"></div>
+</body>
 </html>
