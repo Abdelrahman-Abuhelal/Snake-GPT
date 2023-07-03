@@ -1,20 +1,29 @@
+const apiUrl = "http://127.0.0.1:8000/receive-data/";
+const authToken = "d7110028a6e7b225e4b9ebe31bdd091c"; 
+ function sendDataToAPI(content) {
 
-function sendDataToAPI(content) {
-    fetch('https://your-django-api.com/api/your-endpoint/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ content: content }),
+  const ourData = {
+    content:content ,
+    key2: "value2",
+  };
+
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `${authToken}`,
+
+    },
+    body: JSON.stringify({ourData}),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
     })
-      .then(response => response.json())
-      .then(data => {
-        // Handle the response from the API
-        console.log(data);
-      })
-      .catch(error => {
-        // Handle any errors that occur during the request
-        console.error(error);
-      });
+    .catch(error => {
+      console.error(error);
+    });
+
   }
-  
+
+  sendDataToAPI();

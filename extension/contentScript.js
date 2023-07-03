@@ -1,4 +1,5 @@
 // Remove icons and images from the content
+
 function removeIconsAndImages() {
   var icons = document.querySelectorAll("link[rel='icon'], link[rel='shortcut icon']");
   var images = document.querySelectorAll("img");

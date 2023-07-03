@@ -2,16 +2,20 @@
 <html>
 <head>
   <title>Snake Extraction Extension</title>
-  <script src="popup.js"></script>
+  <script type="module" src="popup.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>Snake Extraction</h1>
-  <label for="ch">Checked: The extension will collect the data from the current web page </label>
-  <label for="scraping-toggle"></label>
-  <input type="checkbox" id="scraping-toggle" checked>
+  <div>
+    
+    <label for="ch">Note: The extension will collect the data from the current web page </label>
+    <label for="scraping-toggle"></label>
+    <input type="checkbox" id="scraping-toggle" checked>
+    
+    <h2>Content:</h2>
+    <div id="content-container"></div>
+  </div>
   
-  <h2>Content:</h2>
-  <div id="content-container"></div>
 </body>
 </html>
