@@ -1,8 +1,9 @@
 
 from django.contrib import admin
 from django.urls import path,include
-from api import views , urls
+from api import urls as apiurls
 
 urlpatterns = [
-    path('',include(urls)),
+    path('',include(apiurls)),
+
 ]
