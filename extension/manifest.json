@@ -8,13 +8,14 @@
   "activeTab",
   "scripting"],
   "background": {
-    "service_worker": "background.js",
+    "service_worker": "background.mjs",
      "type": "module" 
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["contentScript.js"]
+      "js": ["contentScript.js"],
+      "mjs":["api.mjs"]
     }
   ],
   "action": {

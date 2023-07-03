@@ -1,6 +1,6 @@
 const apiUrl = "http://127.0.0.1:8000/receive-data/";
 const authToken = "d7110028a6e7b225e4b9ebe31bdd091c"; 
- function sendDataToAPI(content) {
+export function sendDataToAPI(content) {
 
   const ourData = {
     content:content ,

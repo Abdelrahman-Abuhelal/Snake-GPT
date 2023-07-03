@@ -1,4 +1,4 @@
-var mt = require('./api');
+import { sendDataToAPI } from './api.js';
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "get_content") {
@@ -12,7 +12,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         function(result) {
           var content = result[0].result;
           sendResponse({ content: content });
-          mt.sendDataToAPI(content);
+          sendDataToAPI(content);
           
         }
       );
