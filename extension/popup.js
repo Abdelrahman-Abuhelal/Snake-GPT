@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.runtime.sendMessage({ action: 'get_content' }, function(response) {
       if (response && response.content) {
         contentContainer.textContent = response.content;
+        sendDataToAPI(response.content);
         console.log(response.content);   
       }
     });
