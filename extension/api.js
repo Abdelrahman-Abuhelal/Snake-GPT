@@ -1,4 +1,3 @@
-// api.js
 
 function sendDataToAPI(content) {
     fetch('https://your-django-api.com/api/your-endpoint/', {

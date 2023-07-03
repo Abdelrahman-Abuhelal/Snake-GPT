@@ -18,11 +18,4 @@ function getCleanContent() {
   return content.trim();
 }
 var content = getCleanContent();
-
-// Listen for messages from the background script
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === "get_content") {
-    var content = getCleanContent();
-    sendResponse({ content: content });
-  }
-});
+content;
