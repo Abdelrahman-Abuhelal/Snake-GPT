@@ -1,8 +1,10 @@
 const apiUrl = "http://127.0.0.1:8000/receive-data/";
+const content = "othman talab manasrah";
 
 function sendData() {
+  const d = content
   const data = {
-    key1: "value1",
+    key1: d,
     key2: "value2",
   };
 
