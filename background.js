@@ -1,16 +1,18 @@
-import { sendDataToAPI } from './api.js';
-
-
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.action === "get_content") {
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        var activeTab = tabs[0];
-        chrome.tabs.sendMessage(activeTab.id, { action: "get_content" }, function(response) {
-          sendResponse(response);
-              //sendDataToAPI(content); // Call the function to send data to your Django API
-        });
-      });
-      return true; // Indicates that sendResponse will be called asynchronously
-    }
-  });
-  
+  if (request.action === "get_content") {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+      var activeTab = tabs[0];
+      chrome.scripting.executeScript(
+        {
+          target: { tabId: activeTab.id },
+          files: ["contentScript.js"],
+        },
+        function(result) {
+          var content = result[0].result;
+          sendResponse({ content: content });
+        }
+      );
+    });
+    return true;
+  }
+});

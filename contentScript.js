@@ -17,6 +17,7 @@ function getCleanContent() {
   var content = document.body.textContent;
   return content.trim();
 }
+var content = getCleanContent();
 
 // Listen for messages from the background script
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
