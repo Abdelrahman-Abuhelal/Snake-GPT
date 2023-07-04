@@ -1,22 +1,24 @@
-// Remove icons and images from the content
+var allowedTags = ['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
 
-function removeIconsAndImages() {
-  var icons = document.querySelectorAll("link[rel='icon'], link[rel='shortcut icon']");
-  var images = document.querySelectorAll("img");
-  
-  icons.forEach(function(icon) {
-    icon.remove();
-  });
-  
-  images.forEach(function(image) {
-    image.remove();
-  });
-}
+var content = Array.from(document.querySelectorAll(allowedTags.join(',')))
+  .filter(function(element) {
+    // Exclude style and script elements
+    return element.tagName !== 'STYLE' && element.tagName !== 'SCRIPT';
+  })
+  .map(function(element) {
+    return element.textContent.trim();
+  })
+  .join(' ');
 
-function getCleanContent() {
-  removeIconsAndImages();
-  var content = document.body.textContent;
-  return content.trim();
-}
-var content = getCleanContent();
 content;
+
+  
+// Listen for messages from the background script
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === "get_content") {
+    var content = getCleanContent();
+    sendResponse({ content: content });
+  }
+});
+
+content

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Browser Snake Extension",
-  "version": "1.0",
+  "version": "0.00001",
   "permissions":
    ["tabs",
   "storage",
@@ -16,7 +16,7 @@
       "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
       "mjs":["api.mjs"]
-    }
+      }
   ],
   "action": {
     "default_popup": "popup.html"
