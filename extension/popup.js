@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var scrapingToggle = document.getElementById('scraping-toggle');
+  var scrapingToggle = document.getElementById('agree-toggle');
   var contentContainer = document.getElementById('content-container');
 // default checkbox value
   chrome.storage.sync.get('scrapingEnabled', function(data) {
