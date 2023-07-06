@@ -15,7 +15,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
-      "mjs":["api.mjs"]
+      "mjs":["api.mjs, popup.mjs"]
       }
   ],
   "action": {

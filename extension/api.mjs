@@ -1,20 +1,18 @@
-const apiUrl = "http://127.0.0.1:8000/receive-data/";
 const authToken = "d7110028a6e7b225e4b9ebe31bdd091c"; 
-export function sendDataToAPI(received_content) {
+export function sendContentToApi(content_id,received_content) {
+  const contentData = {
+    content_id:content_id,
+    content_data: received_content
+  }
 
-  const ourData = {
-    content: received_content ,
-    key2: "value2",
-  };
-
-  fetch(apiUrl, {
+  fetch("http://127.0.0.1:8000/content/", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `${authToken}`,
 
     },
-    body: JSON.stringify({ourData}),
+    body: JSON.stringify(contentData),
   })
     .then(response => response.json())
     .then(data => {
@@ -26,4 +24,28 @@ export function sendDataToAPI(received_content) {
 
   }
 
-  sendDataToAPI();
+  export function sendPromptToApi(content_id,received_prompt) {
+    const promptData = {
+        prompt_Data: received_prompt,
+        content_id : content_id 
+    }
+    fetch("http://127.0.0.1:8000/prompt/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${authToken}`,
+      },
+      body: JSON.stringify({ prompt: promptData}),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  
+    }
+
+
+  sendContentToApi();
