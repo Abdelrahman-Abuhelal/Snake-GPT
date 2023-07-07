@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     const data= {
-        prompt : req.body.prompt,
+        prompt_data : req.body.prompt_data,
         content_id : req.body.content_id,
     }
     res.status(201).json({
