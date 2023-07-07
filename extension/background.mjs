@@ -21,6 +21,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
   return true;
 });
+
+
 function generate_uuidv4() {
   return Math.random().toString(36).substring(2, 15) +
   Math.random().toString(36).substring(2, 15);

@@ -29,11 +29,10 @@ export function sendContentToApi(content_id,received_content) {
         prompt_data: received_prompt,
         content_id : content_id 
     }
-    fetch("http://127.0.0.1:8000/receive-data/", {
+    fetch("http://localhost:3000/prompt/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `${authToken}`,
       },
       body: JSON.stringify(promptData),
     })
@@ -48,3 +47,4 @@ export function sendContentToApi(content_id,received_content) {
     }
 
 sendContentToApi();
+sendPromptToApi();

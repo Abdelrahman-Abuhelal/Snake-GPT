@@ -1,4 +1,4 @@
-//import { sendPromptToApi } from "./api.mjs";
+import { sendPromptToApi } from "./api.mjs";
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
   promptText.addEventListener("keydown",function(e){
     if(e.code=="Enter"){
       let enteredPrompt=e.target.value;
-    //  sendPromptToApi(contentId,enteredPrompt);
+      console.log(enteredPrompt);
+      sendPromptToApi(contentId,enteredPrompt);
      }
   });
 
@@ -46,8 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (response && response.contentData && response.contentId) {
         contentData =response.contentData;
         contentId = response.contentId;
-        console.log("DSAFSAFASF");
-
         contentContainer.textContent = contentData;
         //sendDataToAPI(response.content);
         console.log(contentData);   
