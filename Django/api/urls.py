@@ -2,5 +2,5 @@ from django.urls import path
 from .views import receive_data
 
 urlpatterns = [
-    path('receive-data/', receive_data, name='receive_data'),
+    path('receive-data/', receive_data, name='receive-data'),
 ]
