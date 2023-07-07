@@ -1,4 +1,4 @@
-import { sendPromptToApi } from './api.js';
+//import { sendPromptToApi } from "./api.mjs";
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -35,16 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
   promptText.addEventListener("keydown",function(e){
     if(e.code=="Enter"){
       let enteredPrompt=e.target.value;
-      sendPromptToApi(contentId,enteredPrompt);
+    //  sendPromptToApi(contentId,enteredPrompt);
      }
   });
 
   //this function works when the checkbox is enabled, it will display the content and send an action to the background 
   function enableScraping() {
     chrome.runtime.sendMessage({ action: 'get_content' }, function(response) {
-      if (response && response.content) {
-        contentData =response.content;
+
+      if (response && response.contentData && response.contentId) {
+        contentData =response.contentData;
         contentId = response.contentId;
+        console.log("DSAFSAFASF");
+
         contentContainer.textContent = contentData;
         //sendDataToAPI(response.content);
         console.log(contentData);   

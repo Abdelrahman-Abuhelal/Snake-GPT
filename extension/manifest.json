@@ -14,8 +14,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["contentScript.js"],
-      "mjs":["api.mjs, popup.mjs"]
+      "js": ["contentScript.js","popup.js"],
+      "mjs":["api.mjs"]
       }
   ],
   "action": {

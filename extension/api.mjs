@@ -5,7 +5,7 @@ export function sendContentToApi(content_id,received_content) {
     content_data: received_content
   }
 
-  fetch("http://127.0.0.1:8000/content/", {
+  fetch("http://127.0.0.1:8000/receive-data/", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,16 +26,16 @@ export function sendContentToApi(content_id,received_content) {
 
   export function sendPromptToApi(content_id,received_prompt) {
     const promptData = {
-        prompt_Data: received_prompt,
+        prompt_data: received_prompt,
         content_id : content_id 
     }
-    fetch("http://127.0.0.1:8000/prompt/", {
+    fetch("http://127.0.0.1:8000/receive-data/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `${authToken}`,
       },
-      body: JSON.stringify({ prompt: promptData}),
+      body: JSON.stringify(promptData),
     })
       .then(response => response.json())
       .then(data => {
@@ -47,5 +47,4 @@ export function sendContentToApi(content_id,received_content) {
   
     }
 
-
-  sendContentToApi();
+sendContentToApi();
