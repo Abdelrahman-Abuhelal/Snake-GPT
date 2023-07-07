@@ -1,5 +1,4 @@
 import { sendContentToApi } from "./api.mjs";
-//import { v4 as uuid } from "../node_modules/uuid/wrapper.mjs";
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   var activeTab;
@@ -13,7 +12,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         },
         function (result) {
           var content = result[0].result;
-          var contentId ="0"; // Generate a unique id for the content
+          var contentId =generate_uuidv4(); // Generate a unique id for the content
           sendResponse({ contentData:content, contentId: contentId });
           sendContentToApi(contentId, content);
         }
@@ -22,3 +21,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
   return true;
 });
+function generate_uuidv4() {
+  return Math.random().toString(36).substring(2, 15) +
+  Math.random().toString(36).substring(2, 15);
+}
