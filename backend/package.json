@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.2",
+    "morgan": "^1.10.0",
+    "npm": "^9.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "apillm",
+  "version": "1.0.0",
+  "description": "api to handle data between an chrome extension and llm",
+  "main": "app.js",
+  "keywords": [
+    "api",
+    "llm",
+    "content",
+    "prompt"
+  ],
+  "author": "OTM",
+  "license": "ISC"
+}

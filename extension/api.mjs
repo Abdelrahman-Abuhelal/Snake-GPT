@@ -5,16 +5,16 @@ export function sendContentToApi(content_id,received_content) {
     content_data: received_content
   }
 
-  fetch("http://127.0.0.1:8000/receive-data/", {
+  fetch("http://localhost:3000/content", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `${authToken}`,
+      
 
     },
     body: JSON.stringify(contentData),
   })
-    .then(response => response.json())
+    .then(response => response.json()) 
     .then(data => {
       console.log(data);
     })
