@@ -46,5 +46,3 @@ export function sendContentToApi(content_id,received_content) {
   
     }
 
-sendContentToApi();
-sendPromptToApi();

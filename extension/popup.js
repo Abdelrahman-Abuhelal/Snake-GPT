@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var scrapingToggle = document.getElementById('agree-toggle');
   var contentContainer = document.getElementById('content-container');
   var promptText= document.getElementById('prompt_text');
+  var submitButton = document.getElementById("submit_button");
+
   var contentData;
   var contentId;
 // default checkbox value
@@ -30,6 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     chrome.storage.sync.set({ 'scrapingEnabled': isScrapingEnabled });
+  });
+
+  submitButton.addEventListener("click", function () {
+    console.log("Iam here");
+    var enteredPrompt = promptText.value;
+    console.log(enteredPrompt);
+    sendPromptToApi(contentId, enteredPrompt);
   });
 
   promptText.addEventListener("keydown",function(e){
