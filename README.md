@@ -26,6 +26,3 @@ This project aimed to create a chrome extension tool that generate user stories 
 
 • If the user has specific queries or requires additional details, they can interact with SNAKE through the user-friendly extension or GUI. SNAKE responds to their questions by providing insightful information related to the project context.
 
-# Snake Extension:
-
-![image](https://github.com/Abdelrahman-Abuhelal/mysnake/assets/77440941/bbd0e3d5-b563-40ef-8a31-13a5946dd8b4)
