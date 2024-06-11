@@ -6,7 +6,7 @@ This project aimed to create a chrome extension tool that generate user stories 
 
 # Technologies and tools:
 
-1.	Python Libraries and Flask Framework: We honed our skills in Python and leveraged various libraries and the Flask framework for web development.
+1.	Python Libraries and Flask Framework: We honed our skills in Python and leveraged various libraries and Langchain and Flask framework for web development.
 2.	JavaScript, CSS, and HTML: These essential web technologies were utilized in the development of the Chrome extension, ensuring a user-friendly interface.
 3.	Node.js: We employed Node.js to build the backend infrastructure, enabling seamless communication between the front-end and back-end components.
 4.	MongoDB: Data storage was managed using MongoDB, a NoSQL database that facilitated efficient data handling.
