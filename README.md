@@ -15,6 +15,7 @@ This project aimed to create a chrome extension tool that generate user stories 
 7.	Google Colab and Runpod: To meet our computing resource needs, especially for GPU-intensive tasks and testing, we relied on platforms like Google Colab and Runpod, which provided convenient access to the required resources.
 
 # Architecture:
+<img width="1807" height="3840" alt="Untitled diagram _ Mermaid Chart-2025-08-23-100027" src="https://github.com/user-attachments/assets/da377663-ca7a-41f1-b1a4-d06a6e01502b" />
 
 ![image](https://github.com/Abdelrahman-Abuhelal/mysnake/assets/77440941/5439e42d-d0a6-4866-bcaf-69799d4460ad)
 
