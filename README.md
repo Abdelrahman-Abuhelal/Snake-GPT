@@ -3,6 +3,9 @@
 SNAKE, short for Strategic Neural Analysis and Knowledge Enhancement, is an innovation project that I undertook during my internship at Bosch.
 This project aimed to create a chrome extension tool that generate user stories for project requirements based on the context presented on the page opened.
 
+> **Repository Notice:**  
+> This repo contains a limited public version of the project.  
+> The complete and final codebase is stored in a private repository in a different location.
 
 # Technologies and tools:
 
